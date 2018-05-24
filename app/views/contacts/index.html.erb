@@ -5,15 +5,14 @@
 <% else %>
   <% @contacts.each do |single| %>
     <h2><%= single.name %></h2>
-    <span> | </span>
-    <h2><%= single.birthday %></h2>
-    <span> | </span>
-    <h2><%= single.right_handed %></h2>
-    <span> | </span>
-    <h2><%= single.eye_color %></h2>
-    <span> | </span>
-    <h2><%= single.email %></h2>
-    <span> | </span>
-    <%= link_to single.name, contact_path(single) %>
+
+    <%= link_to  "Show Contact", contact_path(single) %>
+    <span> | <span>
+    <%= link_to  "Edit Contact", edit_contact_path(single) %>
+    <span> | <span>
+    <%= link_to  "Delete Contact", single, method: :delete %>
   <% end %>
 <% end %>
+
+<h1><span></span></h1>
+<%= link_to  "Add Contact", new_contact_path %>
