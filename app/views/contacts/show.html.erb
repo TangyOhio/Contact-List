@@ -1,7 +1,17 @@
 <h1>Contacts List</h1>
 
-<h3><%= @contacts.name %></h3>
-<%= @contacts.birthday %>
-<%= @contacts.right_handed %>
-<%= @contacts.eye_color %>
-<%= @contacts.email %>
+<h3><%= @contact.name %></h3>
+<%= @contact.birthday %>
+<%= @contact.right_handed %>
+<%= @contact.eye_color %>
+<%= @contact.email %>
+
+<% if @address.empty? %>
+  <h2> No address yet </h2>
+  <%= link_to  "Add Address", new_contact_address_path %>
+<% else %>
+<h4> Address </h4>
+<%= @address.city %>
+<%= @address.state %>
+<%= @address.zip %>
+<% end %>
