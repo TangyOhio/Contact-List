@@ -3,7 +3,7 @@
 <% if @contacts.empty? %>
   <h2> You have no friends </h2>
 <% else %>
-  <%= @contacts.each_with_index do |single, index| %>
+  <% @contacts.each do |single| %>
     <h2><%= single.name %></h2>
     <span> | </span>
     <h2><%= single.birthday %></h2>
